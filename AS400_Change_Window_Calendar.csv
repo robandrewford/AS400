@@ -1,0 +1,19 @@
+Window_ID,Window_Name,Day_of_Week,Start_Time,End_Time,Duration_Hours,Allowed_Risk_Level,Blackout_Periods,Typical_Users
+CW001,Nightly_Maintenance,Mon-Fri,01:00,05:00,4.0,Medium,"Dec 15-31, Jul 4, Thanksgiving week",IT_Ops
+CW002,Weekend_Extended,Saturday,22:00,Sunday 10:00,12.0,High,"Dec 15-31, Black Friday weekend",IT_Ops
+CW003,Sunday_Daytime,Sunday,10:00,18:00,8.0,Low,Dec 15-31,Business_Users
+CW004,Emergency_Hotfix,Any,Any,Any,2.0,Critical,Never,Incident_Response
+CW005,Monthly_Patch,First Sunday,00:00,23:59,24.0,High,December,IT_Security
+```
+
+## Inferred Assumptions - 5250 Session Profile
+
+**Peak concurrent sessions by time (PST):**
+```
+06:00-08:00: 2200 sessions (warehouse opening, inventory counts)
+08:00-10:00: 3800 sessions (purchase order entry, morning operations)
+10:00-14:00: 4500 sessions (peak shopping, POS transactions via terminal emulation fallback)
+14:00-18:00: 3200 sessions (shipping, closing operations)
+18:00-22:00: 1800 sessions (night shift, replenishment)
+22:00-01:00: 450 sessions (batch monitoring, finance close)
+01:00-06:00: 180 sessions (overnight support, international warehouses)
